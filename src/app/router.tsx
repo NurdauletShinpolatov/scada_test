@@ -4,9 +4,9 @@ import Login from "../pages/Login"
 import Dashboard from "../pages/Dashboard"
 import Stations from "../pages/Stations"
 import StationDetails from "../pages/StationDetails"
-import Logs from "../pages/Logs"
 import MainLayout from "../components/layouts/MainLayout"
 import { useAuthStore } from "../store/auth.store"
+import LogsPage from "../pages/LogsPage"
 
 const Router = () => {
   const isAuth = useAuthStore((state) => state.isAuthorized)
@@ -27,7 +27,7 @@ const Router = () => {
         <Route index element={<Dashboard />} />
         <Route path="/stations" element={<Stations />} />
         <Route path="/stations/:id" element={<StationDetails />} />
-        <Route path="/logs" element={<Logs />} />
+        <Route path="/logs" element={<LogsPage />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Route>
     </Routes>
